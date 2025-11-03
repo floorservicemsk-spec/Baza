@@ -2,20 +2,22 @@
 <html lang="ru">
 <!--
 ╔══════════════════════════════════════════════════════════════╗
-║  📐 КАК ВСТАВИТЬ СВОИ SVG ИКОНКИ:                           ║
+║  📁 КАК ИСПОЛЬЗОВАТЬ СВОИ SVG ИКОНКИ:                       ║
 ║                                                              ║
-║  1. Найдите комментарий в коде:                             ║
-║     <!-- SVG ICON: РАЗМЕР -->                               ║
-║     <!-- SVG ICON: УКЛАДКА -->                              ║
-║     <!-- SVG ICON: ТОЛЩИНА -->                              ║
+║  ПРОСТОЙ СПОСОБ:                                             ║
+║  1. Положите ваши SVG файлы в папку icons/                  ║
+║  2. Переименуйте файлы:                                      ║
+║     - size.svg (размер доски)                               ║
+║     - laying.svg (тип укладки)                              ║
+║     - thickness.svg (толщина доски)                         ║
+║  3. Готово! Все коллекции используют эти иконки             ║
 ║                                                              ║
-║  2. Вставьте path из вашего SVG:                            ║
-║     <svg viewBox="0 0 24 24"><path d="ВАШ PATH"/></svg>     ║
+║  ЕСЛИ ФАЙЛЫ НА СЕРВЕРЕ:                                      ║
+║  Найдите в коде:                                             ║
+║  <img src="icons/size.svg" alt="Размер">                    ║
+║  Замените пути на свои URL                                   ║
 ║                                                              ║
-║  Пример:                                                     ║
-║  <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3z"/>                  ║
-║                                                              ║
-║  📖 Подробная инструкция в файле: КАК_ДОБАВИТЬ_SVG.md       ║
+║  📖 Подробная инструкция: ИНСТРУКЦИЯ_SVG.md                 ║
 ╚══════════════════════════════════════════════════════════════╝
 -->
 <head>
@@ -41,7 +43,7 @@
         .collection-info { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
         .info-item { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: linear-gradient(135deg, rgba(195, 32, 46, 0.85) 0%, rgba(224, 45, 60, 0.85) 50%, rgba(255, 60, 80, 0.85) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); color: white; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: 600; }
         .info-icon { display: inline-block; width: 14px; height: 14px; flex-shrink: 0; }
-        .info-icon svg { width: 100%; height: 100%; fill: white; opacity: 0.95; }
+        .info-icon img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.95; }
         .links-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
         .link-item { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; text-decoration: none; color: #333; transition: all 0.3s ease; font-size: 14px; font-weight: 500; }
         .link-item:hover { background: rgba(255, 255, 255, 1); border-color: rgba(191, 8, 26, 0.3); color: #c3202e; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
@@ -121,9 +123,9 @@
                     <div class="collection-block" data-collection="arto">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">ARTO</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1380×193×12 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1380×193×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item"><span class="link-number">1</span><span class="link-text">Фотографии оттенков</span><span class="link-arrow">→</span></a>
@@ -136,9 +138,9 @@
                     <div class="collection-block" data-collection="chevron">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">CHEVRON</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>630×126×12 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Ёлочка</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>630×126×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Ёлочка</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/-4XlahZr6bMXvg" target="_blank" class="link-item"><span class="link-number">1</span><span class="link-text">Инструкция по укладке</span><span class="link-arrow">→</span></a>
@@ -152,9 +154,9 @@
                     <div class="collection-block" data-collection="fortis">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">FORTIS</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1845×244×10 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>10 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1845×244×10 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>10 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -167,9 +169,9 @@
                     <div class="collection-block" data-collection="grande xxl">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">GRANDE XXL</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>2131×327×10 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>10 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>2131×327×10 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>10 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -182,9 +184,9 @@
                     <div class="collection-block" data-collection="herringbone">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">HERRINGBONE</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>630×126×12 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Ёлочка</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>630×126×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Ёлочка</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/ZXKRSeEOIITJGQ" target="_blank" class="link-item"><span class="link-number">1</span><span class="link-text">Инструкция по укладке</span><span class="link-arrow">→</span></a>
@@ -198,9 +200,9 @@
                     <div class="collection-block" data-collection="manor">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MANOR</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>815×135×12 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Ёлочка</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>815×135×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Ёлочка</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/pUkIp_lZ3PZm8g" target="_blank" class="link-item"><span class="link-number">1</span><span class="link-text">Инструкция по укладке</span><span class="link-arrow">→</span></a>
@@ -213,9 +215,9 @@
                     <div class="collection-block" data-collection="mega xl">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA XL</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1845×244×8 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1845×244×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -228,9 +230,9 @@
                     <div class="collection-block" data-collection="mega">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1380×193×8 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1380×193×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -243,9 +245,9 @@
                     <div class="collection-block" data-collection="premium">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">PREMIUM</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1380×193×12 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1380×193×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -258,9 +260,9 @@
                     <div class="collection-block" data-collection="standard">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">STANDARD</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1380×193×8 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1380×193×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -277,9 +279,9 @@
                     <div class="collection-block" data-collection="aqua spc herringbone">
                         <div class="collection-header"><span class="collection-type">SPC Паркет</span><span class="collection-name">AQUA SPC HERRINGBONE 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>700×128×7 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Ёлочка</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>700×128×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Ёлочка</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -296,9 +298,9 @@
                     <div class="collection-block" data-collection="aqua spc long aba">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long ABA 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1524×228×7 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -311,9 +313,9 @@
                     <div class="collection-block" data-collection="aqua spc long hp">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long HP 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1524×228×7 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -326,9 +328,9 @@
                     <div class="collection-block" data-collection="aqua spc long matt">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long Matt 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1524×228×7 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -341,9 +343,9 @@
                     <div class="collection-block" data-collection="aqua spc wood">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC WOOD 5.5mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1210×150×5.5 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>5.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1210×150×5.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>5.5 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -360,9 +362,9 @@
                     <div class="collection-block" data-collection="aqua lvt 2.5">
                         <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 2.5mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1220×180×2.5 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>2.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1220×180×2.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>2.5 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -375,9 +377,9 @@
                     <div class="collection-block" data-collection="aqua lvt 3">
                         <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 3mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>1220×180×3 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Палуба</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>3 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>1220×180×3 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>3 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
@@ -394,9 +396,9 @@
                     <div class="collection-block" data-collection="wall panels">
                         <div class="collection-header"><span class="collection-type">Стеновые панели</span><span class="collection-name">MY STEP Wall Panels</span></div>
                         <div class="collection-info">
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: РАЗМЕР --><svg viewBox="0 0 24 24"><path d=""/></svg></span>2600×250×8 мм</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: УКЛАДКА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>Вертикальная</span>
-                            <span class="info-item"><span class="info-icon"><!-- SVG ICON: ТОЛЩИНА --><svg viewBox="0 0 24 24"><path d=""/></svg></span>8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/size.svg" alt="Размер"></span>2600×250×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/laying.svg" alt="Укладка"></span>Вертикальная</span>
+                            <span class="info-item"><span class="info-icon"><img src="icons/thickness.svg" alt="Толщина"></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled"><span class="link-number">·</span><span class="link-text">Инструкция по укладке<span class="link-note">(в разработке)</span></span><span class="link-arrow">→</span></a>
