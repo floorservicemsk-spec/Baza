@@ -3,255 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???? ??????????</title>
+    <title>База материалов</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .search-container {
-            margin-bottom: 40px;
-            position: sticky;
-            top: 20px;
-            z-index: 10;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 18px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(191, 8, 26, 0.2);
-            border-radius: 16px;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            outline: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-input:focus {
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(191, 8, 26, 0.5);
-            box-shadow: 0 8px 30px rgba(191, 8, 26, 0.2);
-        }
-
-        .category-section {
-            margin-bottom: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .category-section.hidden {
-            display: none;
-        }
-
-        .category-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 30px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #c3202e;
-        }
-
-        .collection-block {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .collection-block.hidden {
-            display: none;
-        }
-
-        .collection-block:hover {
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            transform: translateY(-5px);
-        }
-
-        .collection-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .collection-type {
-            display: inline-block;
-            padding: 8px 16px;
-            background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%);
-            color: white;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3);
-        }
-
-        .collection-name {
-            font-size: 26px;
-            font-weight: 700;
-            color: #c3202e;
-            flex: 1;
-        }
-
-        .collection-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .info-item {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 18px;
-            background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .info-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(195, 32, 46, 0.4);
-        }
-
-        .info-label {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .info-value {
-            font-size: 15px;
-            font-weight: 700;
-            color: white;
-        }
-
-        .links-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 12px;
-        }
-
-        .link-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px 18px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .link-item:hover {
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(191, 8, 26, 0.3);
-            color: #c3202e;
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-item.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .link-item.disabled:hover {
-            transform: none;
-        }
-
-        .link-icon {
-            font-size: 18px;
-            min-width: 18px;
-        }
-
-        .link-note {
-            font-size: 11px;
-            color: #999;
-            font-style: italic;
-            display: block;
-            margin-top: 2px;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 80px 20px;
-            color: #666;
-            font-size: 20px;
-        }
-
-        .no-results.hidden {
-            display: none;
-        }
-
+        .search-container { margin-bottom: 40px; position: sticky; top: 20px; z-index: 10; }
+        .search-input { width: 100%; padding: 18px 20px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border: 2px solid rgba(191, 8, 26, 0.2); border-radius: 16px; font-size: 18px; transition: all 0.3s ease; outline: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        .search-input:focus { background: rgba(255, 255, 255, 1); border-color: rgba(191, 8, 26, 0.5); box-shadow: 0 8px 30px rgba(191, 8, 26, 0.2); }
+        .category-section { margin-bottom: 50px; transition: all 0.3s ease; }
+        .category-section.hidden { display: none; }
+        .category-title { font-size: 28px; font-weight: 700; color: #1d1d1f; margin-bottom: 30px; padding-bottom: 12px; border-bottom: 2px solid #c3202e; }
+        .collection-block { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
+        .collection-block.hidden { display: none; }
+        .collection-block:hover { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); transform: translateY(-5px); }
+        .collection-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .collection-type { display: inline-block; padding: 8px 16px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); }
+        .collection-name { font-size: 26px; font-weight: 700; color: #c3202e; flex: 1; }
+        .collection-info { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
+        .info-item { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 18px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); transition: all 0.3s ease; }
+        .info-item:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(195, 32, 46, 0.4); }
+        .info-label { font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        .info-value { font-size: 15px; font-weight: 700; color: white; }
+        .links-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .link-item { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; text-decoration: none; color: #333; transition: all 0.3s ease; font-size: 14px; font-weight: 500; }
+        .link-item:hover { background: rgba(255, 255, 255, 1); border-color: rgba(191, 8, 26, 0.3); color: #c3202e; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .link-item.disabled { opacity: 0.5; cursor: not-allowed; }
+        .link-item.disabled:hover { transform: none; }
+        .link-icon { font-size: 18px; min-width: 18px; }
+        .link-note { font-size: 11px; color: #999; font-style: italic; display: block; margin-top: 2px; }
+        .no-results { text-align: center; padding: 80px 20px; color: #666; font-size: 20px; }
+        .no-results.hidden { display: none; }
         @media (max-width: 768px) {
-            .search-container {
-                top: 10px;
-                margin-bottom: 30px;
-            }
-
-            .search-input {
-                padding: 15px 18px;
-                font-size: 16px;
-            }
-
-            .category-title {
-                font-size: 24px;
-            }
-
-            .collection-block {
-                padding: 20px;
-            }
-
-            .collection-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .collection-name {
-                font-size: 22px;
-            }
-
-            .collection-info {
-                gap: 10px;
-            }
-            
-            .info-item {
-                padding: 8px 14px;
-            }
-            
-            .info-label {
-                font-size: 10px;
-            }
-            
-            .info-value {
-                font-size: 13px;
-            }
-
-            .links-list {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .link-item {
-                padding: 12px 15px;
-                font-size: 13px;
-            }
+            .search-container { top: 10px; margin-bottom: 30px; }
+            .search-input { padding: 15px 18px; font-size: 16px; }
+            .category-title { font-size: 24px; }
+            .collection-block { padding: 20px; }
+            .collection-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .collection-name { font-size: 22px; }
+            .collection-info { gap: 10px; }
+            .info-item { padding: 8px 14px; }
+            .info-label { font-size: 10px; }
+            .info-value { font-size: 13px; }
+            .links-list { grid-template-columns: 1fr; gap: 10px; }
+            .link-item { padding: 12px 15px; font-size: 13px; }
         }
     </style>
 </head>
@@ -259,709 +52,160 @@
     <div id="site">
         <div class="container">
             <div class="header">
-                <h1>
-                    <span class="main-title">
-                        <span class="b1">????</span> ??????????
-                    </span>
-                </h1>
-                <p class="subtitle">??? ?????????? ? ?????????? ? ????? ?????</p>
+                <h1><span class="main-title"><span class="b1">База</span> материалов</span></h1>
+                <p class="subtitle">Вся информация о коллекциях в одном месте</p>
             </div>
-
             <div class="search-container">
-                <input 
-                    type="text" 
-                    class="search-input" 
-                    id="searchInput" 
-                    placeholder="?? ????? ?? ????????? (????????, MEGA, ARTO, AQUA)..."
-                    autocomplete="off"
-                >
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Поиск по коллекции (например, MEGA, ARTO, AQUA)..." autocomplete="off">
             </div>
-
             <div id="categoriesContainer">
-                <!-- ??????? -->
                 <div class="category-section" data-category="laminate">
-                    <h2 class="category-title">???????</h2>
-
-                    <!-- ARTO -->
+                    <h2 class="category-title">Ламинат</h2>
                     <div class="collection-block" data-collection="arto">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">ARTO</span>
-                        </div>
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">ARTO</span></div>
                         <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1380?193?12 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">12 ??</div>
-                            </div>
+                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1380×193×12 мм</div></div>
+                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
+                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">12 мм</div></div>
                         </div>
                         <div class="links-list">
-                            <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/dYBAAD03ZKI3VA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>???????? ??? ?????????</span>
-                            </a>
+                            <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
+                            <a href="https://disk.yandex.ru/d/dYBAAD03ZKI3VA" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
+                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
+                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item"><span class="link-icon">💼</span><span>Листовка как продавать</span></a>
                         </div>
                     </div>
-
-                    <!-- CHEVRON -->
-                    <div class="collection-block" data-collection="chevron">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">CHEVRON</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">630?126?12 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">12 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="https://disk.yandex.ru/i/-4XlahZr6bMXvg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/tj2OvDIQudsnEA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/XU2_afMap-07Bg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/Jr4sgBJ18omNGQ" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/i/aDpy0xSBobvoPg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>???????? ??? ?????????</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- FORTIS -->
-                    <div class="collection-block" data-collection="fortis">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">FORTIS</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1845?244?10 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">10 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/nJ-mRzai7nvFTQ" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/PPgC2VEvsL3V4w" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- GRANDE XXL -->
-                    <div class="collection-block" data-collection="grande xxl">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">GRANDE XXL</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">2131?327?10 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">10 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/wWlgPs0dHpU57g" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/UHCj3fioCZ7weg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- HERRINGBONE -->
-                    <div class="collection-block" data-collection="herringbone">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">HERRINGBONE</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">630?126?12 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">12 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="https://disk.yandex.ru/i/ZXKRSeEOIITJGQ" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/SzoFKqJ74D8Tag" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/SWCGh0OfWqi4Uw" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/BmQhUlD63S5D3F" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/i/E4wD37r1wFSA-Q" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>???????? ??? ?????????</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- MANOR -->
-                    <div class="collection-block" data-collection="manor">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">MANOR</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">815?135?12 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">12 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="https://disk.yandex.ru/i/pUkIp_lZ3PZm8g" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/Lzlw0CpHvxplfw" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/2C8seZt39rf1CA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/i/2Pb0EoOLYWBBIQ" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>???????? ??? ?????????</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- MEGA XL -->
-                    <div class="collection-block" data-collection="mega xl">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">MEGA XL</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1845?244?8 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">8 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- MEGA -->
                     <div class="collection-block" data-collection="mega">
-                        <div class="collection-header">
-                            <span class="collection-type">???????</span>
-                            <span class="collection-name">MEGA</span>
-                        </div>
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA</span></div>
                         <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1380?193?8 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">8 ??</div>
-                            </div>
+                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1380×193×8 мм</div></div>
+                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
+                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">8 мм</div></div>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
+                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
+                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
+                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- SPC -->
                 <div class="category-section" data-category="spc">
-                    <h2 class="category-title">????? ????? SPC</h2>
-
-                    <!-- AQUA SPC Long ABA 7mm -->
-                    <div class="collection-block" data-collection="aqua spc aba">
-                        <div class="collection-header">
-                            <span class="collection-type">SPC</span>
-                            <span class="collection-name">AQUA SPC Long ABA 7mm</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1524?228?7 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">7 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/dDIDNHXmtVav6g" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- AQUA SPC Long HP 7mm -->
-                    <div class="collection-block" data-collection="aqua spc hp">
-                        <div class="collection-header">
-                            <span class="collection-type">SPC</span>
-                            <span class="collection-name">AQUA SPC Long HP 7mm</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1524?228?7 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">7 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/twXXwEqC2FiElQ" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- AQUA SPC Long Matt 7mm -->
+                    <h2 class="category-title">Кварц винил SPC</h2>
                     <div class="collection-block" data-collection="aqua spc matt">
-                        <div class="collection-header">
-                            <span class="collection-type">SPC</span>
-                            <span class="collection-name">AQUA SPC Long Matt 7mm</span>
-                        </div>
+                        <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long Matt 7mm</span></div>
                         <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1524?228?7 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">7 ??</div>
-                            </div>
+                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1524×228×7 мм</div></div>
+                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
+                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">7 мм</div></div>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/YAw6hpZ-LPTH4w" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/az0XJ-xE7qY1pA" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
+                            <a href="https://disk.yandex.ru/d/YAw6hpZ-LPTH4w" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
+                            <a href="https://disk.yandex.ru/d/az0XJ-xE7qY1pA" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">✅</span><span>Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></span></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- LVT -->
                 <div class="category-section" data-category="lvt">
-                    <h2 class="category-title">????? ????? LVT</h2>
-
-                    <!-- AQUA LVT 2.5mm -->
-                    <div class="collection-block" data-collection="aqua lvt 2.5">
-                        <div class="collection-header">
-                            <span class="collection-type">LVT</span>
-                            <span class="collection-name">AQUA LVT 2.5mm</span>
-                        </div>
-                        <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1220?180?2.5 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">2.5 ??</div>
-                            </div>
-                        </div>
-                        <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- AQUA LVT 3mm -->
+                    <h2 class="category-title">Кварц винил LVT</h2>
                     <div class="collection-block" data-collection="aqua lvt 3">
-                        <div class="collection-header">
-                            <span class="collection-type">LVT</span>
-                            <span class="collection-name">AQUA LVT 3mm</span>
-                        </div>
+                        <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 3mm</span></div>
                         <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ?????</div>
-                                <div class="info-value">1220?180?3 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">??????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">??????? ?????</div>
-                                <div class="info-value">3 ??</div>
-                            </div>
+                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1220×180×3 мм</div></div>
+                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
+                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">3 мм</div></div>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">🎨</span><span>Фотографии оттенков<span class="link-note">(будут размещены позже)</span></span></a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">🏠</span><span>Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></span></a>
+                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- ???????? ?????? -->
                 <div class="category-section" data-category="wall">
-                    <h2 class="category-title">???????? ??????</h2>
-
-                    <!-- Wall Panels -->
+                    <h2 class="category-title">Стеновые панели</h2>
                     <div class="collection-block" data-collection="wall panels">
-                        <div class="collection-header">
-                            <span class="collection-type">???????? ??????</span>
-                            <span class="collection-name">MY STEP Wall Panels</span>
-                        </div>
+                        <div class="collection-header"><span class="collection-type">Стеновые панели</span><span class="collection-name">MY STEP Wall Panels</span></div>
                         <div class="collection-info">
-                            <div class="info-item">
-                                <div class="info-label">?????? ??????</div>
-                                <div class="info-value">2600?250?8 ??</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">????????????</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">???????</div>
-                                <div class="info-value">8 ??</div>
-                            </div>
+                            <div class="info-item"><div class="info-label">Размер панели</div><div class="info-value">2600×250×8 мм</div></div>
+                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Вертикальная</div></div>
+                            <div class="info-item"><div class="info-label">Толщина</div><div class="info-value">8 мм</div></div>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ?? ???????<span class="link-note">(? ??????????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/ka2skhiIcP3_Jg" target="_blank" class="link-item">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>?????????? ? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
-                            <a href="https://disk.yandex.ru/d/T3K3tYAenwQnuw" target="_blank" class="link-item">
-                                <span class="link-icon">?</span>
-                                <span>??????????? ????????????</span>
-                            </a>
-                            <a href="#" class="link-item disabled">
-                                <span class="link-icon">??</span>
-                                <span>???????? ??? ?????????<span class="link-note">(????? ????????? ?????)</span></span>
-                            </a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
+                            <a href="https://disk.yandex.ru/d/ka2skhiIcP3_Jg" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">🏠</span><span>Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></span></a>
+                            <a href="https://disk.yandex.ru/d/T3K3tYAenwQnuw" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
+                            <a href="#" class="link-item disabled"><span class="link-icon">💼</span><span>Листовка как продавать<span class="link-note">(будет размещена позже)</span></span></a>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="no-results hidden" id="noResults">
-                <p>?? ????????? ?? ???????</p>
-                <p style="font-size: 16px; color: #999; margin-top: 10px;">
-                    ?????????? ???????? ??????
-                </p>
+                <p>😔 Коллекция не найдена</p>
+                <p style="font-size: 16px; color: #999; margin-top: 10px;">Попробуйте изменить запрос</p>
             </div>
         </div>
     </div>
-
     <script>
-        // Smart search functionality
-        const searchInput = document.getElementById('searchInput');
-        const categoriesContainer = document.getElementById('categoriesContainer');
-        const noResults = document.getElementById('noResults');
-        const categorySections = document.querySelectorAll('.category-section');
-        const collectionBlocks = document.querySelectorAll('.collection-block');
-
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            let visibleCount = 0;
-
-            if (searchTerm === '') {
-                categorySections.forEach(section => section.classList.remove('hidden'));
-                collectionBlocks.forEach(block => block.classList.remove('hidden'));
+        const searchInput=document.getElementById('searchInput');
+        const categorySections=document.querySelectorAll('.category-section');
+        const collectionBlocks=document.querySelectorAll('.collection-block');
+        const noResults=document.getElementById('noResults');
+        searchInput.addEventListener('input',function(){
+            const searchTerm=this.value.toLowerCase().trim();
+            let visibleCount=0;
+            if(searchTerm===''){
+                categorySections.forEach(s=>s.classList.remove('hidden'));
+                collectionBlocks.forEach(b=>b.classList.remove('hidden'));
                 noResults.classList.add('hidden');
                 return;
             }
-
-            categorySections.forEach(section => section.classList.add('hidden'));
-
-            collectionBlocks.forEach(block => {
-                const collectionName = block.getAttribute('data-collection');
-                const categoryName = block.closest('.category-section').getAttribute('data-category');
-                
-                if (collectionName.includes(searchTerm) || categoryName.includes(searchTerm)) {
+            categorySections.forEach(s=>s.classList.add('hidden'));
+            collectionBlocks.forEach(block=>{
+                const collectionName=block.getAttribute('data-collection');
+                const categoryName=block.closest('.category-section').getAttribute('data-category');
+                if(collectionName.includes(searchTerm)||categoryName.includes(searchTerm)){
                     block.classList.remove('hidden');
-                    const parentCategory = block.closest('.category-section');
-                    if (parentCategory) {
-                        parentCategory.classList.remove('hidden');
-                    }
+                    const parentCategory=block.closest('.category-section');
+                    if(parentCategory) parentCategory.classList.remove('hidden');
                     visibleCount++;
-                } else {
+                }else{
                     block.classList.add('hidden');
                 }
             });
-
-            categorySections.forEach(section => {
-                const visibleItems = section.querySelectorAll('.collection-block:not(.hidden)');
-                if (visibleItems.length === 0) {
-                    section.classList.add('hidden');
-                }
+            categorySections.forEach(section=>{
+                const visibleItems=section.querySelectorAll('.collection-block:not(.hidden)');
+                if(visibleItems.length===0) section.classList.add('hidden');
             });
-
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-            }
+            if(visibleCount===0) noResults.classList.remove('hidden');
+            else noResults.classList.add('hidden');
         });
-
-        searchInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                this.value = '';
+        searchInput.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){
+                this.value='';
                 this.dispatchEvent(new Event('input'));
                 this.blur();
             }
         });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 50);
+        const observerOptions={threshold:0.1,rootMargin:'0px 0px -50px 0px'};
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.style.opacity='0';
+                    entry.target.style.transform='translateY(20px)';
+                    setTimeout(()=>{
+                        entry.target.style.transition='opacity 0.5s ease, transform 0.5s ease';
+                        entry.target.style.opacity='1';
+                        entry.target.style.transform='translateY(0)';
+                    },50);
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-
-        collectionBlocks.forEach(block => {
-            observer.observe(block);
-        });
+        },observerOptions);
+        collectionBlocks.forEach(block=>observer.observe(block));
     </script>
 </body>
 </html>
