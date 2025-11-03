@@ -19,16 +19,13 @@
         .collection-type { display: inline-block; padding: 8px 16px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); }
         .collection-name { font-size: 26px; font-weight: 700; color: #c3202e; flex: 1; }
         .collection-info { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
-        .info-item { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 18px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); transition: all 0.3s ease; }
+        .info-item { display: inline-block; padding: 10px 18px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); transition: all 0.3s ease; font-size: 15px; font-weight: 700; }
         .info-item:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(195, 32, 46, 0.4); }
-        .info-label { font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
-        .info-value { font-size: 15px; font-weight: 700; color: white; }
         .links-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
-        .link-item { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; text-decoration: none; color: #333; transition: all 0.3s ease; font-size: 14px; font-weight: 500; }
+        .link-item { display: flex; align-items: center; padding: 15px 18px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; text-decoration: none; color: #333; transition: all 0.3s ease; font-size: 14px; font-weight: 500; }
         .link-item:hover { background: rgba(255, 255, 255, 1); border-color: rgba(191, 8, 26, 0.3); color: #c3202e; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-        .link-item.disabled { opacity: 0.5; cursor: not-allowed; }
+        .link-item.disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
         .link-item.disabled:hover { transform: none; }
-        .link-icon { font-size: 18px; min-width: 18px; }
         .link-note { font-size: 11px; color: #999; font-style: italic; display: block; margin-top: 2px; }
         .no-results { text-align: center; padding: 80px 20px; color: #666; font-size: 20px; }
         .no-results.hidden { display: none; }
@@ -40,9 +37,7 @@
             .collection-header { flex-direction: column; align-items: flex-start; gap: 10px; }
             .collection-name { font-size: 22px; }
             .collection-info { gap: 10px; }
-            .info-item { padding: 8px 14px; }
-            .info-label { font-size: 10px; }
-            .info-value { font-size: 13px; }
+            .info-item { padding: 8px 14px; font-size: 13px; }
             .links-list { grid-template-columns: 1fr; gap: 10px; }
             .link-item { padding: 12px 15px; font-size: 13px; }
         }
@@ -61,84 +56,293 @@
             <div id="categoriesContainer">
                 <div class="category-section" data-category="laminate">
                     <h2 class="category-title">Ламинат</h2>
+
                     <div class="collection-block" data-collection="arto">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">ARTO</span></div>
                         <div class="collection-info">
-                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1380×193×12 мм</div></div>
-                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
-                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">12 мм</div></div>
+                            <span class="info-item">1380×193×12 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">12 мм</span>
                         </div>
                         <div class="links-list">
-                            <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
-                            <a href="https://disk.yandex.ru/d/dYBAAD03ZKI3VA" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
-                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
-                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item"><span class="link-icon">💼</span><span>Листовка как продавать</span></a>
+                            <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/dYBAAD03ZKI3VA" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item">Сертификаты соответствия</a>
+                            <a href="https://disk.yandex.ru/d/WG7jRpnghCFNYg" target="_blank" class="link-item">Листовка как продавать</a>
                         </div>
                     </div>
+
+                    <div class="collection-block" data-collection="chevron">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">CHEVRON</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">630×126×12 мм</span>
+                            <span class="info-item">Ёлочка</span>
+                            <span class="info-item">12 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="https://disk.yandex.ru/i/-4XlahZr6bMXvg" target="_blank" class="link-item">Инструкция по укладке</a>
+                            <a href="https://disk.yandex.ru/d/tj2OvDIQudsnEA" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/XU2_afMap-07Bg" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/Jr4sgBJ18omNGQ" target="_blank" class="link-item">Сертификаты соответствия</a>
+                            <a href="https://disk.yandex.ru/i/aDpy0xSBobvoPg" target="_blank" class="link-item">Листовка как продавать</a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="fortis">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">FORTIS</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1845×244×10 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">10 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/nJ-mRzai7nvFTQ" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/PPgC2VEvsL3V4w" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="grande xxl">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">GRANDE XXL</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">2131×327×10 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">10 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/wWlgPs0dHpU57g" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/UHCj3fioCZ7weg" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="herringbone">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">HERRINGBONE</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">630×126×12 мм</span>
+                            <span class="info-item">Ёлочка</span>
+                            <span class="info-item">12 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="https://disk.yandex.ru/i/ZXKRSeEOIITJGQ" target="_blank" class="link-item">Инструкция по укладке</a>
+                            <a href="https://disk.yandex.ru/d/SzoFKqJ74D8Tag" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/SWCGh0OfWqi4Uw" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/BmQhUlD63S5D3F" target="_blank" class="link-item">Сертификаты соответствия</a>
+                            <a href="https://disk.yandex.ru/i/E4wD37r1wFSA-Q" target="_blank" class="link-item">Листовка как продавать</a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="manor">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MANOR</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">815×135×12 мм</span>
+                            <span class="info-item">Ёлочка</span>
+                            <span class="info-item">12 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="https://disk.yandex.ru/i/pUkIp_lZ3PZm8g" target="_blank" class="link-item">Инструкция по укладке</a>
+                            <a href="https://disk.yandex.ru/d/Lzlw0CpHvxplfw" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/2C8seZt39rf1CA" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/i/2Pb0EoOLYWBBIQ" target="_blank" class="link-item">Листовка как продавать</a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="mega xl">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA XL</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1845×244×8 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">8 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item">Сертификаты соответствия</a>
+                        </div>
+                    </div>
+
                     <div class="collection-block" data-collection="mega">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA</span></div>
                         <div class="collection-info">
-                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1380×193×8 мм</div></div>
-                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
-                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">8 мм</div></div>
+                            <span class="info-item">1380×193×8 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">8 мм</span>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
-                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
-                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
-                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/I56Zd1MGDMcITA" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/7yR3lphJDumHeg" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/vWbE7BxS-TBZcw" target="_blank" class="link-item">Сертификаты соответствия</a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="premium">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">PREMIUM</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1380×193×12 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">12 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/wnbFl_WqAJZ3Sw" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/KwOj35l3XEpzqg" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/Jr4sgBJ18omNGQ" target="_blank" class="link-item">Сертификаты соответствия</a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="standard">
+                        <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">STANDARD</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1380×193×8 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">8 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/3Mxqa4bY3hm0_A" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/zHc5SrVWOBZH_w" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="https://disk.yandex.ru/d/Jr4sgBJ18omNGQ" target="_blank" class="link-item">Сертификаты соответствия</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="category-section" data-category="spc-parket">
+                    <h2 class="category-title">SPC паркет</h2>
+
+                    <div class="collection-block" data-collection="aqua spc herringbone">
+                        <div class="collection-header"><span class="collection-type">SPC Паркет</span><span class="collection-name">AQUA SPC HERRINGBONE 7mm</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">700×128×7 мм</span>
+                            <span class="info-item">Ёлочка</span>
+                            <span class="info-item">7 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/KqK_1FrG5p1aSYA" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="category-section" data-category="spc">
-                    <h2 class="category-title">Кварц винил SPC</h2>
-                    <div class="collection-block" data-collection="aqua spc matt">
+                    <h2 class="category-title">SPC ламинат</h2>
+
+                    <div class="collection-block" data-collection="aqua spc long aba">
+                        <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long ABA 7mm</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">7 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/dDIDNHXmtVav6g" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="aqua spc long hp">
+                        <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long HP 7mm</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">7 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/twXXwEqC2FiElQ" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="aqua spc long matt">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long Matt 7mm</span></div>
                         <div class="collection-info">
-                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1524×228×7 мм</div></div>
-                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
-                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">7 мм</div></div>
+                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">7 мм</span>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
-                            <a href="https://disk.yandex.ru/d/YAw6hpZ-LPTH4w" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
-                            <a href="https://disk.yandex.ru/d/az0XJ-xE7qY1pA" target="_blank" class="link-item"><span class="link-icon">🏠</span><span>Фотографии в интерьере</span></a>
-                            <a href="#" class="link-item disabled"><span class="link-icon">✅</span><span>Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></span></a>
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/YAw6hpZ-LPTH4w" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="https://disk.yandex.ru/d/az0XJ-xE7qY1pA" target="_blank" class="link-item">Фотографии в интерьере</a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
+                        </div>
+                    </div>
+
+                    <div class="collection-block" data-collection="aqua spc wood">
+                        <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC WOOD 5.5mm</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1210×150×5.5 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">5.5 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/5CqghcckERp9Gw" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Сертификаты соответствия<span class="link-note">(будут размещены позже)</span></a>
                         </div>
                     </div>
                 </div>
+
                 <div class="category-section" data-category="lvt">
-                    <h2 class="category-title">Кварц винил LVT</h2>
+                    <h2 class="category-title">LVT</h2>
+
+                    <div class="collection-block" data-collection="aqua lvt 2.5">
+                        <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 2.5mm</span></div>
+                        <div class="collection-info">
+                            <span class="info-item">1220×180×2.5 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">2.5 мм</span>
+                        </div>
+                        <div class="links-list">
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="#" class="link-item disabled">Фотографии оттенков<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item">Сертификаты соответствия</a>
+                        </div>
+                    </div>
+
                     <div class="collection-block" data-collection="aqua lvt 3">
                         <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 3mm</span></div>
                         <div class="collection-info">
-                            <div class="info-item"><div class="info-label">Размер доски</div><div class="info-value">1220×180×3 мм</div></div>
-                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Палуба</div></div>
-                            <div class="info-item"><div class="info-label">Толщина доски</div><div class="info-value">3 мм</div></div>
+                            <span class="info-item">1220×180×3 мм</span>
+                            <span class="info-item">Палуба</span>
+                            <span class="info-item">3 мм</span>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
-                            <a href="#" class="link-item disabled"><span class="link-icon">🎨</span><span>Фотографии оттенков<span class="link-note">(будут размещены позже)</span></span></a>
-                            <a href="#" class="link-item disabled"><span class="link-icon">🏠</span><span>Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></span></a>
-                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="#" class="link-item disabled">Фотографии оттенков<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="https://disk.yandex.ru/d/i2g03dyTsLydmg" target="_blank" class="link-item">Сертификаты соответствия</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="category-section" data-category="wall">
                     <h2 class="category-title">Стеновые панели</h2>
+
                     <div class="collection-block" data-collection="wall panels">
                         <div class="collection-header"><span class="collection-type">Стеновые панели</span><span class="collection-name">MY STEP Wall Panels</span></div>
                         <div class="collection-info">
-                            <div class="info-item"><div class="info-label">Размер панели</div><div class="info-value">2600×250×8 мм</div></div>
-                            <div class="info-item"><div class="info-label">Укладка</div><div class="info-value">Вертикальная</div></div>
-                            <div class="info-item"><div class="info-label">Толщина</div><div class="info-value">8 мм</div></div>
+                            <span class="info-item">2600×250×8 мм</span>
+                            <span class="info-item">Вертикальная</span>
+                            <span class="info-item">8 мм</span>
                         </div>
                         <div class="links-list">
-                            <a href="#" class="link-item disabled"><span class="link-icon">📋</span><span>Инструкция по укладке<span class="link-note">(в разработке)</span></span></a>
-                            <a href="https://disk.yandex.ru/d/ka2skhiIcP3_Jg" target="_blank" class="link-item"><span class="link-icon">🎨</span><span>Фотографии оттенков</span></a>
-                            <a href="#" class="link-item disabled"><span class="link-icon">🏠</span><span>Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></span></a>
-                            <a href="https://disk.yandex.ru/d/T3K3tYAenwQnuw" target="_blank" class="link-item"><span class="link-icon">✅</span><span>Сертификаты соответствия</span></a>
-                            <a href="#" class="link-item disabled"><span class="link-icon">💼</span><span>Листовка как продавать<span class="link-note">(будет размещена позже)</span></span></a>
+                            <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
+                            <a href="https://disk.yandex.ru/d/ka2skhiIcP3_Jg" target="_blank" class="link-item">Фотографии оттенков</a>
+                            <a href="#" class="link-item disabled">Фотографии в интерьере<span class="link-note">(будут размещены позже)</span></a>
+                            <a href="https://disk.yandex.ru/d/T3K3tYAenwQnuw" target="_blank" class="link-item">Сертификаты соответствия</a>
+                            <a href="#" class="link-item disabled">Листовка как продавать<span class="link-note">(будет размещена позже)</span></a>
                         </div>
                     </div>
                 </div>
