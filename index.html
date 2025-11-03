@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  📐 КАК ВСТАВИТЬ СВОИ SVG ИКОНКИ:                           ║
+║                                                              ║
+║  1. Найдите комментарий в коде:                             ║
+║     <!-- SVG ICON: РАЗМЕР -->                               ║
+║     <!-- SVG ICON: УКЛАДКА -->                              ║
+║     <!-- SVG ICON: ТОЛЩИНА -->                              ║
+║                                                              ║
+║  2. Вставьте path из вашего SVG:                            ║
+║     <svg viewBox="0 0 24 24"><path d="ВАШ PATH"/></svg>     ║
+║                                                              ║
+║  Пример:                                                     ║
+║  <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3z"/>                  ║
+║                                                              ║
+║  📖 Подробная инструкция в файле: КАК_ДОБАВИТЬ_SVG.md       ║
+╚══════════════════════════════════════════════════════════════╝
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +54,14 @@
         .link-note { font-size: 11px; color: #999; font-style: italic; display: block; margin-top: 2px; }
         .no-results { text-align: center; padding: 80px 20px; color: #666; font-size: 20px; }
         .no-results.hidden { display: none; }
+        .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding: 20px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .logo-container { flex: 0 0 auto; }
+        .logo-image { max-width: 200px; height: auto; }
+        .social-links { display: flex; gap: 15px; align-items: center; }
+        .social-link { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 50%; text-decoration: none; transition: all 0.3s ease; }
+        .social-link:hover { background: rgba(255, 255, 255, 1); border-color: rgba(195, 32, 46, 0.3); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .social-link svg { width: 20px; height: 20px; fill: #333; transition: fill 0.3s ease; }
+        .social-link:hover svg { fill: #c3202e; }
         @media (max-width: 768px) {
             .search-container { top: 10px; margin-bottom: 30px; }
             .search-input { padding: 15px 18px; font-size: 16px; }
@@ -50,12 +76,37 @@
             .link-item { padding: 12px 15px; font-size: 13px; }
             .link-number { width: 24px; height: 24px; min-width: 24px; font-size: 11px; }
             .link-arrow { font-size: 14px; }
+            .top-bar { flex-direction: column; gap: 20px; padding: 15px 0; }
+            .logo-image { max-width: 150px; }
+            .social-links { gap: 12px; }
+            .social-link { width: 38px; height: 38px; }
+            .social-link svg { width: 18px; height: 18px; }
         }
     </style>
 </head>
 <body>
     <div id="site">
         <div class="container">
+            <div class="top-bar">
+                <div class="logo-container">
+                    <!-- ВАШЕ ЛОГО ЗДЕСЬ -->
+                    <img src="your-logo.png" alt="Logo" class="logo-image">
+                </div>
+                <div class="social-links">
+                    <a href="https://vk.com/your_page" target="_blank" class="social-link" title="ВКонтакте">
+                        <svg viewBox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.35 14.4h-1.31c-.55 0-.72-.44-1.71-1.44-.86-.83-1.24-.94-1.46-.94-.3 0-.38.08-.38.47v1.31c0 .36-.11.57-1.07.57-1.59 0-3.35-.96-4.59-2.75-1.87-2.66-2.38-4.65-2.38-5.06 0-.22.08-.43.47-.43h1.31c.35 0 .48.16.62.54.69 2.07 1.86 3.88 2.34 3.88.18 0 .26-.08.26-.54v-2.11c-.06-.97-.57-1.05-.57-1.39 0-.18.14-.35.37-.35h2.06c.29 0 .4.16.4.5v2.85c0 .29.13.4.21.4.18 0 .33-.11.66-.44 1.01-1.15 1.74-2.92 1.74-2.92.09-.21.26-.43.66-.43h1.31c.39 0 .47.2.39.5-.14.69-1.67 3.47-1.67 3.47-.15.24-.2.35 0 .62.14.2.62.6 .93.97.57.65 1.01 1.19 1.13 1.57.12.38-.08.57-.47.57z"/></svg>
+                    </a>
+                    <a href="https://t.me/your_channel" target="_blank" class="social-link" title="Telegram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    </a>
+                    <a href="https://dzen.ru/your_page" target="_blank" class="social-link" title="Дзен">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </a>
+                    <a href="https://your-website.com" target="_blank" class="social-link" title="Сайт">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="header">
                 <h1><span class="main-title"><span class="b1">База</span> материалов</span></h1>
                 <p class="subtitle">Вся информация о коллекциях в одном месте</p>
