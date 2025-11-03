@@ -19,8 +19,10 @@
         .collection-type { display: inline-block; padding: 8px 16px; background: linear-gradient(135deg, #c3202e 0%, #e02d3c 100%); color: white; border-radius: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase; box-shadow: 0 4px 12px rgba(195, 32, 46, 0.3); }
         .collection-name { font-size: 26px; font-weight: 700; color: #c3202e; flex: 1; }
         .collection-info { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
-        .info-item { display: inline-block; padding: 10px 18px; background: linear-gradient(135deg, rgba(195, 32, 46, 0.85) 0%, rgba(224, 45, 60, 0.85) 50%, rgba(255, 60, 80, 0.85) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); color: white; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 16px rgba(195, 32, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 15px; font-weight: 700; }
+        .info-item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: linear-gradient(135deg, rgba(195, 32, 46, 0.85) 0%, rgba(224, 45, 60, 0.85) 50%, rgba(255, 60, 80, 0.85) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); color: white; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 16px rgba(195, 32, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 13px; font-weight: 700; }
         .info-item:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 24px rgba(195, 32, 46, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15); background: linear-gradient(135deg, rgba(195, 32, 46, 0.9) 0%, rgba(224, 45, 60, 0.9) 50%, rgba(255, 60, 80, 0.9) 100%); }
+        .info-icon { display: inline-block; width: 16px; height: 16px; }
+        .info-icon svg { width: 100%; height: 100%; fill: white; opacity: 0.95; }
         .links-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
         .link-item { display: flex; align-items: center; padding: 15px 18px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; text-decoration: none; color: #333; transition: all 0.3s ease; font-size: 14px; font-weight: 500; }
         .link-item:hover { background: rgba(255, 255, 255, 1); border-color: rgba(191, 8, 26, 0.3); color: #c3202e; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
@@ -37,7 +39,8 @@
             .collection-header { flex-direction: column; align-items: flex-start; gap: 10px; }
             .collection-name { font-size: 22px; }
             .collection-info { gap: 10px; }
-            .info-item { padding: 8px 14px; font-size: 13px; }
+            .info-item { padding: 7px 12px; font-size: 12px; gap: 6px; }
+            .info-icon { width: 14px; height: 14px; }
             .links-list { grid-template-columns: 1fr; gap: 10px; }
             .link-item { padding: 12px 15px; font-size: 13px; }
         }
@@ -60,9 +63,9 @@
                     <div class="collection-block" data-collection="arto">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">ARTO</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1380×193×12 мм</span>
-                            <span class="info-item">Палуба</span>
-                            <span class="info-item">12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1380×193×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>Палуба</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/d/41pgvMBFkFPtug" target="_blank" class="link-item">Фотографии оттенков</a>
@@ -75,9 +78,9 @@
                     <div class="collection-block" data-collection="chevron">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">CHEVRON</span></div>
                         <div class="collection-info">
-                            <span class="info-item">630×126×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>630×126×12 мм</span>
                             <span class="info-item">Ёлочка</span>
-                            <span class="info-item">12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/-4XlahZr6bMXvg" target="_blank" class="link-item">Инструкция по укладке</a>
@@ -91,9 +94,9 @@
                     <div class="collection-block" data-collection="fortis">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">FORTIS</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1845×244×10 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1845×244×10 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">10 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>10 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -106,9 +109,9 @@
                     <div class="collection-block" data-collection="grande xxl">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">GRANDE XXL</span></div>
                         <div class="collection-info">
-                            <span class="info-item">2131×327×10 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>2131×327×10 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">10 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>10 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -121,9 +124,9 @@
                     <div class="collection-block" data-collection="herringbone">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">HERRINGBONE</span></div>
                         <div class="collection-info">
-                            <span class="info-item">630×126×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>630×126×12 мм</span>
                             <span class="info-item">Ёлочка</span>
-                            <span class="info-item">12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/ZXKRSeEOIITJGQ" target="_blank" class="link-item">Инструкция по укладке</a>
@@ -137,9 +140,9 @@
                     <div class="collection-block" data-collection="manor">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MANOR</span></div>
                         <div class="collection-info">
-                            <span class="info-item">815×135×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>815×135×12 мм</span>
                             <span class="info-item">Ёлочка</span>
-                            <span class="info-item">12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="https://disk.yandex.ru/i/pUkIp_lZ3PZm8g" target="_blank" class="link-item">Инструкция по укладке</a>
@@ -152,9 +155,9 @@
                     <div class="collection-block" data-collection="mega xl">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA XL</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1845×244×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1845×244×8 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -167,9 +170,9 @@
                     <div class="collection-block" data-collection="mega">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">MEGA</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1380×193×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1380×193×8 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -182,9 +185,9 @@
                     <div class="collection-block" data-collection="premium">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">PREMIUM</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1380×193×12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1380×193×12 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">12 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>12 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -197,9 +200,9 @@
                     <div class="collection-block" data-collection="standard">
                         <div class="collection-header"><span class="collection-type">Ламинат</span><span class="collection-name">STANDARD</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1380×193×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1380×193×8 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -216,9 +219,9 @@
                     <div class="collection-block" data-collection="aqua spc herringbone">
                         <div class="collection-header"><span class="collection-type">SPC Паркет</span><span class="collection-name">AQUA SPC HERRINGBONE 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">700×128×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>700×128×7 мм</span>
                             <span class="info-item">Ёлочка</span>
-                            <span class="info-item">7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -235,9 +238,9 @@
                     <div class="collection-block" data-collection="aqua spc long aba">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long ABA 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1524×228×7 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -250,9 +253,9 @@
                     <div class="collection-block" data-collection="aqua spc long hp">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long HP 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1524×228×7 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -265,9 +268,9 @@
                     <div class="collection-block" data-collection="aqua spc long matt">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC Long Matt 7mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1524×228×7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1524×228×7 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">7 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>7 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -280,9 +283,9 @@
                     <div class="collection-block" data-collection="aqua spc wood">
                         <div class="collection-header"><span class="collection-type">SPC</span><span class="collection-name">AQUA SPC WOOD 5.5mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1210×150×5.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1210×150×5.5 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">5.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>5.5 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -299,9 +302,9 @@
                     <div class="collection-block" data-collection="aqua lvt 2.5">
                         <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 2.5mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1220×180×2.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1220×180×2.5 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">2.5 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>2.5 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -314,9 +317,9 @@
                     <div class="collection-block" data-collection="aqua lvt 3">
                         <div class="collection-header"><span class="collection-type">LVT</span><span class="collection-name">AQUA LVT 3mm</span></div>
                         <div class="collection-info">
-                            <span class="info-item">1220×180×3 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>1220×180×3 мм</span>
                             <span class="info-item">Палуба</span>
-                            <span class="info-item">3 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>3 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
@@ -333,9 +336,9 @@
                     <div class="collection-block" data-collection="wall panels">
                         <div class="collection-header"><span class="collection-type">Стеновые панели</span><span class="collection-name">MY STEP Wall Panels</span></div>
                         <div class="collection-info">
-                            <span class="info-item">2600×250×8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>2600×250×8 мм</span>
                             <span class="info-item">Вертикальная</span>
-                            <span class="info-item">8 мм</span>
+                            <span class="info-item"><span class="info-icon"><svg viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></span>8 мм</span>
                         </div>
                         <div class="links-list">
                             <a href="#" class="link-item disabled">Инструкция по укладке<span class="link-note">(в разработке)</span></a>
